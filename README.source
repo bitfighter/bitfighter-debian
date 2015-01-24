@@ -1,0 +1,7 @@
+bitfighter for Debian
+---------------------
+
+The original upstream tarball must have certain resources removed to be
+debian-compatible.  See debian/copyright for the 'Files-Excluded:' tag
+to se what is remove from upstream.
+

@@ -1,0 +1,84 @@
+Description: Perform intiial debianization tasks
+ Modifies engine to load system fonts correctly. Uses system libs where
+ available. Removes non-DFSG components from CMake. Fixes build system bug
+ which was discarding debian link flags.
+ .
+ bitfighter (019d+dfsg-6) unstable; urgency=low
+ .
+   * Initial release (Closes: #705303)
+Author: Bryan Conrad <bkconrad@gmail.com>
+Bug-Debian: http://bugs.debian.org/705303
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- bitfighter-019d+dfsg.orig/CMakeLists.txt
++++ bitfighter-019d+dfsg/CMakeLists.txt
+@@ -204,8 +204,6 @@ endif()
+ add_subdirectory(tnl)
+ add_subdirectory(tnlping)
+ add_subdirectory(master)
+-add_subdirectory(updater)  # Windows-only
+-
+ 
+ # Our main sources!
+ add_subdirectory(zap)
+--- bitfighter-019d+dfsg.orig/cmake/Platform/Linux.cmake
++++ bitfighter-019d+dfsg/cmake/Platform/Linux.cmake
+@@ -23,7 +23,7 @@ endif()
+ message(STATUS "CMAKE_DATA_PATH: ${CMAKE_DATA_PATH}.  Change this by invoking cmake with -DCMAKE_DATA_PATH=<SOME_DIRECTORY>")
+ 
+ # Quotes need to be a part of the definition or the compiler won't understand
+-add_definitions(-DLINUX_DATA_DIR="${CMAKE_DATA_PATH}")
++add_definitions(-DLINUX_DATA_DIR="${CMAKE_DATA_PATH}/games")
+ 
+ 
+ #
+@@ -76,22 +76,13 @@ endfunction()
+ 
+ function(BF_PLATFORM_INSTALL targetName)
+ 	# Binaries
+-	install(TARGETS ${targetName} RUNTIME DESTINATION bin)
++	install(TARGETS ${targetName} RUNTIME DESTINATION games)
+ 	
+-	# Modify python script to have the shebang
+-	install(CODE "execute_process(COMMAND sed -i -e \"1s@^@#!/usr/bin/env python\\\\n\\\\n@\" ${CMAKE_SOURCE_DIR}/notifier/bitfighter_notifier.py)")
+-	install(PROGRAMS ${CMAKE_SOURCE_DIR}/notifier/bitfighter_notifier.py DESTINATION bin)
+-	
+-	# Install desktop files
+-	install(FILES ${CMAKE_SOURCE_DIR}/debian/bitfighter.desktop DESTINATION ${CMAKE_DATA_PATH}/applications/)
+-	install(FILES ${CMAKE_SOURCE_DIR}/debian/bitfighter.png DESTINATION ${CMAKE_DATA_PATH}/pixmaps/)
+-	
+-	# Manpage
+-	install(FILES ${CMAKE_SOURCE_DIR}/debian/bitfighter.1 DESTINATION ${CMAKE_DATA_PATH}/man/man1/)
++	install(FILES ${CMAKE_SOURCE_DIR}/resource/bitfighter.xpm DESTINATION ${CMAKE_DATA_PATH}/pixmaps/)
+ 	
+ 	# Resources
+-	install(DIRECTORY ${CMAKE_SOURCE_DIR}/resource/ DESTINATION ${CMAKE_DATA_PATH}/bitfighter/)
+-	install(FILES ${CMAKE_SOURCE_DIR}/exe/joystick_presets.ini DESTINATION ${CMAKE_DATA_PATH}/bitfighter/)
++	install(DIRECTORY ${CMAKE_SOURCE_DIR}/resource/ DESTINATION ${CMAKE_DATA_PATH}/games/bitfighter/)
++	install(FILES ${CMAKE_SOURCE_DIR}/exe/joystick_presets.ini DESTINATION ${CMAKE_DATA_PATH}/games/bitfighter/)
+ 	
+ endfunction()
+ 
+--- bitfighter-019d+dfsg.orig/zap/FontManager.cpp
++++ bitfighter-019d+dfsg/zap/FontManager.cpp
+@@ -163,7 +163,7 @@ void FontManager::initialize(GameSetting
+       //fontList[FontOrbitronMedium] = new BfFont("Orbitron Medium.ttf", settings);
+       fontList[FontDroidSansMono]  = new BfFont("DroidSansMono.ttf",   settings);
+       fontList[FontWebDings]       = new BfFont("webhostinghub-glyphs.ttf", settings);
+-      fontList[FontPlay]           = new BfFont("Play-Regular-hinting.ttf", settings);
++      fontList[FontPlay]           = new BfFont("Play-Regular.ttf", settings);
+       fontList[FontPlayBold]       = new BfFont("Play-Bold.ttf",       settings);
+       fontList[FontModernVision]   = new BfFont("Modern-Vision.ttf",   settings);
+ 

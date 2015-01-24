@@ -1,0 +1,67 @@
+Source: bitfighter
+Section: games
+Priority: optional
+Maintainer: David Buck <buckyballreaction@gmail.com>
+Build-Depends:
+ cmake,
+ debhelper (>= 9.0.0),
+ libalure-dev,
+ libboost-dev,
+ libluajit-5.1-dev,
+ libmodplug-dev,
+ libopenal-dev,
+ libpng12-dev,
+ libpolyclipping-dev,
+ libsdl2-dev,
+ libspeex-dev,
+ libsqlite3-dev,
+ libtomcrypt-dev,
+ libvorbis-dev,
+ zlib1g-dev
+Standards-Version: 3.9.6
+Homepage: http://bitfighter.org
+
+Package: bitfighter
+Architecture: any
+Depends:
+ bitfighter-data,
+ fonts-droid,
+ fonts-play,
+ libalure1,
+ libluajit-5.1,
+ libmodplug1,
+ libopenal1,
+ libpng12,
+ libpolyclipping16,
+ libsdl2-2.0,
+ libspeex1,
+ libsqlite3,
+ libtomcrypt0,
+ libvorbis0a,
+ zlib1g,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: Fast-paced two dimensional online space shooter
+ Bitfighter is a fast-paced two-dimensional online space
+ shooter. It aims for intuitive gameplay and an approachable learning curve
+ so that it is both friendly to newcomers and interesting to experienced
+ players.
+ .
+ Included features:
+  * Online player performance statistics
+  * In-game level editor
+  * Lua scripting environment for generating or controlling the gameplay
+ elements of created levels
+  * Voice chat
+  * Built-in server hosting
+  * Joystick support
+
+Package: bitfighter-data
+Architecture: all
+Depends:
+ ${misc:Depends}
+Description: Resource and data files for bitfighter
+ Bitfighter is a fast-paced two-dimensional online space
+ shooter. It aims for intuitive gameplay and an approachable learning curve
+ so that it is both friendly to newcomers and interesting to experienced
+ players.

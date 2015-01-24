@@ -1,0 +1,11 @@
+bitfighter (019d+dfsg-1) unstable; urgency=low
+
+  * Lots of debian changes to conform with the package review
+
+ -- David Buck <buckyballreaction@gmail.com>  Sat, 24 Jan 2015 13:50:55 -0700
+
+bitfighter (019c-1) unstable; urgency=low
+
+  * Initial release (Closes: #705303)
+
+ -- Bryan Conrad <bkconrad@gmail.com>  Tue, 29 Apr 2014 19:18:04 -0700
