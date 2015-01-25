@@ -27,18 +27,6 @@ Depends:
  bitfighter-data,
  fonts-droid,
  fonts-play,
- libalure1,
- libluajit-5.1,
- libmodplug1,
- libopenal1,
- libpng12,
- libpolyclipping16,
- libsdl2-2.0,
- libspeex1,
- libsqlite3,
- libtomcrypt0,
- libvorbis0a,
- zlib1g,
  ${misc:Depends},
  ${shlibs:Depends}
 Description: Fast-paced two dimensional online space shooter
