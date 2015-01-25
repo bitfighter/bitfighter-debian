@@ -1,7 +1,5 @@
 Description: Fix cmake to respect passed LD flags
- bitfighter (019d+dfsg-7) unstable; urgency=low
- .
-   * Initial release (Closes: #705303)
+Forwarded: Pending upstream commit
 Author: Bryan Conrad <bkconrad@gmail.com>
 Bug-Debian: http://bugs.debian.org/705303
 

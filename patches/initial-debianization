@@ -1,38 +1,9 @@
 Description: Perform intiial debianization tasks
  Modifies engine to load system fonts correctly. Uses system libs where
- available. Removes non-DFSG components from CMake. Fixes build system bug
- which was discarding debian link flags.
- .
- bitfighter (019d+dfsg-6) unstable; urgency=low
- .
-   * Initial release (Closes: #705303)
+ available. Removes non-DFSG components from CMake.
 Author: Bryan Conrad <bkconrad@gmail.com>
 Bug-Debian: http://bugs.debian.org/705303
 
----
-The information above should follow the Patch Tagging Guidelines, please
-checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
-are templates for supplementary fields that you might want to add:
-
-Origin: <vendor|upstream|other>, <url of original patch>
-Bug: <url in upstream bugtracker>
-Bug-Debian: http://bugs.debian.org/<bugnumber>
-Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
-Forwarded: <no|not-needed|url proving that it has been forwarded>
-Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: <YYYY-MM-DD>
-
---- bitfighter-019d+dfsg.orig/CMakeLists.txt
-+++ bitfighter-019d+dfsg/CMakeLists.txt
-@@ -204,8 +204,6 @@ endif()
- add_subdirectory(tnl)
- add_subdirectory(tnlping)
- add_subdirectory(master)
--add_subdirectory(updater)  # Windows-only
--
- 
- # Our main sources!
- add_subdirectory(zap)
 --- bitfighter-019d+dfsg.orig/cmake/Platform/Linux.cmake
 +++ bitfighter-019d+dfsg/cmake/Platform/Linux.cmake
 @@ -23,7 +23,7 @@ endif()
