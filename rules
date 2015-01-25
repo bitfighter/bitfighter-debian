@@ -16,3 +16,7 @@ LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
 %:
 	dh $@ --parallel
 
+get-orig-source:
+	# Thanks to 'ras' on #debian-mentors.  This works because all files
+	# excluded are in debian/copyright Files-Excluded field
+	uscan --force-download --destdir .

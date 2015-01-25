@@ -2,10 +2,10 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: bitfighter
 Source: http://bitfighter.org/downloads
 Comment: These files are excluded because they are non-DFSG, non-Linux related, or just upstream junk.
-Files-Excluded: */*.lib */*.dll debian zap/resource.h zap/ZAP.rc resource/fonts/* alure bitfighter_test boost build clipper gtest libmodplug libogg libpng libsdl libspeex libvorbis lua luadoc.pl misc mysql++ notifier openal other sqlite tomcrypt zlib
+Files-Excluded: debian lib zap/resource.h zap/ZAP.rc resource/fonts/* alure bitfighter_test boost build clipper gtest libmodplug libogg libpng libsdl libspeex libvorbis lua luadoc.pl misc mysql++ notifier openal other sqlite tomcrypt zlib updater/gpl.txt updater/License.txt updater/bin updater/lib updater/resource updater/src resource/sfx/gofast.sfs master/master?support* master/schema
 
 Files: *
-Copyright: © 2008-2014 Chris Eykamp
+Copyright: © 2008-2015 Chris Eykamp
 License: GPL-2+
 
 Files: tnl/*
@@ -43,7 +43,7 @@ License: CC-BY-SA-3.0
 
 Files: resource/music/menu.ogg
 Copyright: © 2012 Chris Neal
-License: 
+License: CC-PD
 
 Files: resource/music/credits.ogg
 Copyright: Public Domain
@@ -87,7 +87,7 @@ License: MIT
  FROM OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  IN THE SOFTWARE.
 
-License: BSD-3-clause
+License: BSD-3-Clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -128,10 +128,10 @@ License: zlib
  3. This notice may not be removed or altered from any source distribution.
 
 License: CC-PD
- This work has been identified as being free of known restrictions under 
+ This work has been identified as being free of known restrictions under
  copyright law, including all related and neighboring rights.
  .
- You can copy, modify, distribute and perform the work, even for commercial 
+ You can copy, modify, distribute and perform the work, even for commercial
  purposes, all without asking permission. See Other Information below.
 
 License: CC-BY-SA-3.0
@@ -494,4 +494,3 @@ License: CC-BY-SA-3.0
      this trademark restriction does not form part of the License.
  .
      Creative Commons may be contacted at https://creativecommons.org/.
-
