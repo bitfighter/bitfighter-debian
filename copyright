@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: bitfighter
 Source: http://bitfighter.org/downloads
 Comment: These files are excluded because they are non-DFSG, non-Linux related, or just upstream junk.
-Files-Excluded: */*.lib */*.dll debian
+Files-Excluded: */*.lib */*.dll debian zap/resource.h zap/ZAP.rc resource/fonts/* alure bitfighter_test boost build clipper gtest libmodplug libogg libpng libsdl libspeex libvorbis lua luadoc.pl misc mysql++ notifier openal other sqlite tomcrypt zlib
 
 Files: *
 Copyright: © 2008-2014 Chris Eykamp
