@@ -1,0 +1,82 @@
+Description: Add an upstream changelog, taken from the website
+Author: David Buck <buckyballreaction@gmail.com>
+Forwarded: no
+
+--- /dev/null
++++ bitfighter-019d+dfsg/CHANGELOG.txt
+@@ -0,0 +1,75 @@
++New features for 019
++--------------------
++
++ - UI changes everywhere. More sleek and shiny
++ - Font changes everywhere. This improves rendering performance in many cases
++ - Level database! with upload from editor. See http://bitfighter.org/pleiades/
++ - Loadout, Goal, Nexus zones have icons instead of text
++ - LineItems have a 'Global' option to be viewd by all teams. This is default
++
++Weapon changes:
++---------------
++
++ - Bouncer uses slightly less energy and stays alive the more it bounces (with
++   an upper limit)
++ - Phaser does slighly less damage
++ - Triple does more damage and uses more energy (2 hit kills now)
++ - Burst uses twice the energy
++ - Seeker uses half as much energy, does less damage, shoots faster, and does
++   area damage
++ - Mines do not explode unless a burst is within proximity circle. Also Mines
++   in a mine field will not all detonate at once
++
++Module changes:
++---------------
++
++ - Shield uses slightly more energy
++ - Armor is slightly stronger, resistant to impulse forces, and it takes 2
++   asteroids to kill you. Also remove Bouncer advantage against armor
++ - Turrets do not hurt themselves with their own weapons
++ - Asteroids split when you run into them
++
++Many Lua API changes, additions, and enhancements.
++--------------------------------------------------
++
++ - See http://bitfighter.org/luadocs/
++ - Geom library enhancements. These are very useful with editor plugins
++ - Removal of old addLevelLine()
++ - More control of many game objects, like a ship's loadout
++ - Added a Lua debugger
++ - Increase limits on points for most objects
++ - Increase limits in the level parameters section of the editor
++ - Add ability to change points-per-minute in HTF gametype
++ - New server permissions level: Owner. They can kick admins if needed
++ - New editor plugins: 'draw_stars' and 'item_select'
++
++Misc
++----
++
++ - Levels are saved with real coordinates now. Levels created with 019 are
++   *not* backwards-compatible.
++ - No more 'GridSize' level parameter.
++ - New plugin dock for the editor (F4)
++ - No blanking out background when going idle
++ - Add ROBOTS in-game menu to add remove bots easily
++ - Add ROBOTS menu when hosting game
++ - Add option to have robots intelligently force balanced teams
++ - Add marks for regenerative turrets and forcefield projectors
++ - Teleporters are repairable
++ - 3 new badges! Raging Rabid Rabbit (RAB), Hat Trick (SOC), and Last-Second
++   Win (CTF)
++ - Removed score penalty for being killed by Asteroid/Turret in Rabbit gametype
++ - Always select first weapon when changing loadout
++ - In-game help system. Can be turned on/off in the OPTIONS menu
++ - Increase game object limit. We'll see how this goes...
++ - Add /rate command for levels that are in the online database
++ - You can now edit text in the middle of the word in all the various
++   interfaces
++ - Added several text effects for things
++ - In-game kill streaks (not recorded in stats yet)
++ - Command /shownextlevel to see what the next level in rotation is
++ - Command /undeletelevel to undo most recently deleted level with
++   /deletecurrentlevel
++ - Editor: Add ability to rotate objects about their center of 'mass'
++ - Remove showing keyboard keys in joystick mode
++ - Levelgens upload/download with levels now
