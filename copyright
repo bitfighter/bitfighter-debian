@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: bitfighter
 Source: http://bitfighter.org/downloads
 Comment: These files are excluded because they are non-DFSG, non-Linux related, or just upstream junk.
-Files-Excluded: debian lib zap/resource.h zap/ZAP.rc resource/fonts/* alure bitfighter_test boost build clipper gtest libmodplug libogg libpng libsdl libspeex libvorbis lua luadoc.pl misc mysql++ notifier openal other sqlite tomcrypt zlib updater/gpl.txt updater/License.txt updater/bin updater/lib updater/resource updater/src resource/sfx/gofast.sfs master/master?support* master/schema
+Files-Excluded: debian lib zap/resource.h zap/ZAP.rc resource/fonts/* resource/music/menu.ogg alure bitfighter_test boost build clipper gtest libmodplug libogg libpng libsdl libspeex libvorbis lua luadoc.pl misc mysql++ notifier openal other sqlite tomcrypt zlib updater/gpl.txt updater/License.txt updater/bin updater/lib updater/resource updater/src resource/sfx/gofast.sfs master/master?support* master/schema
 
 Files: *
 Copyright: © 2008-2015 Chris Eykamp
@@ -40,10 +40,6 @@ License: zlib
 Files: resource/music/*.xm
 Copyright: © 2015 Andreas Viklund
 License: CC-BY-SA-3.0
-
-Files: resource/music/menu.ogg
-Copyright: © 2012 Chris Neal
-License: CC-PD
 
 Files: resource/music/credits.ogg
 Copyright: Public Domain

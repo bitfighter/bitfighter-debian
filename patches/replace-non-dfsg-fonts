@@ -1,0 +1,17 @@
+Description: Patch to replace a non-dfsg compatible font (Modern-Vision)
+ Upstream wishes to keep the font for other platforms
+Author: David Buck <buckyballreaction@gmail.com>
+Forwarded: not-needed
+Origin: vendor
+
+--- bitfighter-019d+dfsg.orig/zap/FontManager.cpp
++++ bitfighter-019d+dfsg/zap/FontManager.cpp
+@@ -241,7 +241,7 @@ void FontManager::setFontContext(FontCon
+       case LoadoutIndicatorContext:
+       case ScoreboardHeadlineContext:
+       case HelperMenuHeadlineContext:
+-        setFont(FontModernVision);
++        setFont(FontPlay);
+          return;
+ 
+       case HelperMenuContext:
