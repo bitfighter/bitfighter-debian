@@ -16,6 +16,11 @@ LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
 %:
 	dh $@ --parallel
 
+override_dh_auto_configure:
+	# Generate icon
+	convert -resize 32x32 debian/bitfighter.png debian/bitfighter.xpm
+	dh_auto_configure
+
 get-orig-source:
 	# Thanks to 'ras' on #debian-mentors.  This works because all files
 	# excluded are in debian/copyright Files-Excluded field

@@ -5,6 +5,7 @@ Maintainer: David Buck <buckyballreaction@gmail.com>
 Build-Depends:
  cmake,
  debhelper (>= 9.0.0),
+ imagemagick,
  libalure-dev,
  libboost-dev,
  libluajit-5.1-dev,
