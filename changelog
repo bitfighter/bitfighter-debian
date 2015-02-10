@@ -1,8 +1,9 @@
-bitfighter (019d+dfsg-13) unstable; urgency=low
+bitfighter (019d+dfsg-14) unstable; urgency=low
 
   * Lots of debian changes to conform with the package review
+  * Many copyright clarifications and additions
 
- -- David Buck <buckyballreaction@gmail.com>  Sat, 24 Jan 2015 22:16:48 -0700
+ -- David Buck <buckyballreaction@gmail.com>  Mon, 09 Feb 2015 20:16:48 -0700
 
 bitfighter (019c-1) unstable; urgency=low
 

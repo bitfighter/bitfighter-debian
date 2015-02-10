@@ -1,0 +1,28 @@
+Description: Patch to replace font Play with LiberationSans
+ The Play font does not render properly on debian
+Author: David Buck <buckyballreaction@gmail.com>
+Forwarded: not-needed
+Origin: vendor
+Bug: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776273
+
+
+--- bitfighter-019d+dfsg.orig/zap/FontManager.cpp
++++ bitfighter-019d+dfsg/zap/FontManager.cpp
+@@ -44,7 +44,7 @@ const char *BfFont::SystemFontDirectorie
+ #ifdef TNL_OS_LINUX
+    "/usr/share/fonts/truetype/droid",
+    "/usr/share/fonts/truetype/play",
+-   "/usr/share/fonts/truetype/ocr-a"
++   "/usr/share/fonts/truetype/liberation"
+ #else
+    ""
+ #endif
+@@ -163,7 +163,7 @@ void FontManager::initialize(GameSetting
+       //fontList[FontOrbitronMedium] = new BfFont("Orbitron Medium.ttf", settings);
+       fontList[FontDroidSansMono]  = new BfFont("DroidSansMono.ttf",   settings);
+       fontList[FontWebDings]       = new BfFont("webhostinghub-glyphs.ttf", settings);
+-      fontList[FontPlay]           = new BfFont("Play-Regular.ttf", settings);
++      fontList[FontPlay]           = new BfFont("LiberationSans-Regular.ttf", settings);
+       fontList[FontPlayBold]       = new BfFont("Play-Bold.ttf",       settings);
+       fontList[FontModernVision]   = new BfFont("Modern-Vision.ttf",   settings);
+ 

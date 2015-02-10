@@ -28,6 +28,7 @@ Depends:
  bitfighter-data,
  fonts-droid,
  fonts-play,
+ fonts-liberation,
  ${misc:Depends},
  ${shlibs:Depends}
 Description: Fast-paced two dimensional online space shooter
